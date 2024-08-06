@@ -1,0 +1,9 @@
+﻿@model IEnumerable<string>
+
+    <form asp-action="Remove" asp-controller="Home" method="post">
+        <div>
+            <label for="list">Quelle tâche supprimée?</label>
+            <select name="task" id="list" asp-items="@Model.Select(t => new SelectListItem(t,t))"></select>
+        </div>
+        <button type="submit">Supprimer</button>
+    </form>

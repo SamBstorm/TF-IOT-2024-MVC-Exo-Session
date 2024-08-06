@@ -1,0 +1,10 @@
+﻿@{
+}
+
+<form asp-action="Add" asp-controller="Home" method="post">
+    <div>
+        <label for="task">Quel est votre tâche ?</label>
+        <input id="task" name="task" min="2" max="16" required/>
+    </div>
+    <button type="submit">Ajouter</button>
+</form>

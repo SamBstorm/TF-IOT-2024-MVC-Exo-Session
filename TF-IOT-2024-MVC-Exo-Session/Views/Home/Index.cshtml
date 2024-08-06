@@ -1,0 +1,24 @@
+﻿@model IEnumerable<string>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">To Do List</h1>
+    @if(Model.Count() > 0)
+    {
+        <a asp-action="Add" asp-controller="Home">Ajouter une tâche</a><span>|</span>
+        <a asp-action="Remove" asp-controller="Home">Supprimer une tâche</a>
+        <ul>
+            @foreach (string task in Model)
+            {
+                <li>@task</li>
+            }
+        </ul>
+        <a asp-action="Clear" asp-controller="Home">Vider la liste</a>
+    }
+    else
+    {
+        <p>Pas encore de tâches... <a asp-action="Add" asp-controller="Home">En ajouter une?</a></p>    
+    }
+</div>
